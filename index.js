@@ -1,5 +1,6 @@
 const Discord = require("discord.js")
 const axios = require("axios");
+require('dotenv').config();
 const client = new Discord.Client({intents:[Discord.Intents.FLAGS.DIRECT_MESSAGES,Discord.Intents.FLAGS.GUILDS,Discord.Intents.FLAGS.GUILD_MESSAGES]});
 client.once('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`)
@@ -56,5 +57,5 @@ client.on("message",msg => {
 
 })
 
-client.login('ODk4MDIwNzAzNDQwMzcxNzEy.YWeI9A.IWkIVjDEybUAh_-N63a_B3zZDV0')
+client.login(process.env.TOKEN)
 
