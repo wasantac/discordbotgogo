@@ -2,6 +2,17 @@ const Discord = require("discord.js")
 const axios = require("axios");
 require('dotenv').config();
 const client = new Discord.Client({intents:[Discord.Intents.FLAGS.DIRECT_MESSAGES,Discord.Intents.FLAGS.GUILDS,Discord.Intents.FLAGS.GUILD_MESSAGES]});
+
+
+const mensajes_personas = {
+    "walter":["Alto Fachero","Grande","God","Sexy"]
+    ,"decker":["Anda Caido","Ruti no lo ama","piernitas de pollo"]
+    ,"bryan":["Simio","Zzzz","Pelado fit","Pelado Sambo"]
+    ,"sebas":["Furro","Literalmente un Furro"]
+    ,"jose":["Josex","Te va a caer con el FBI","Agente Secretp"]
+}
+
+
 client.once('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`)
 })
@@ -16,24 +27,34 @@ client.on("message",msg => {
             msg.channel.send('pong!')
             break
         }
-        case 'walter':{
-            msg.channel.send('alto facha')
+        case 'walter':{            
+            let items = mensajes_personas[command]
+            let item = items[Math.floor(Math.random()*items.length)];
+            msg.channel.send(item)
             break
         }
         case 'decker':{
-            msg.channel.send('anda caido')
+            let items = mensajes_personas[command]
+            let item = items[Math.floor(Math.random()*items.length)];
+            msg.channel.send(item)
             break
         }
         case 'bryan':{
-            msg.channel.send('simio')
+            let items = mensajes_personas[command]
+            let item = items[Math.floor(Math.random()*items.length)];
+            msg.channel.send(item)
             break
         }
         case 'jose':{
-            msg.channel.send('josex')
+            let items = mensajes_personas[command]
+            let item = items[Math.floor(Math.random()*items.length)];
+            msg.channel.send(item)
             break
         }
         case 'sebas':{
-            msg.channel.send('furro')
+            let items = mensajes_personas[command]
+            let item = items[Math.floor(Math.random()*items.length)];
+            msg.channel.send(item)
             break
         }
         case 'rule34':{
