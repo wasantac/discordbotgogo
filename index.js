@@ -9,7 +9,8 @@ const mensajes_personas = {
     ,"decker":["Anda Caido","Ruti no lo ama","piernitas de pollo"]
     ,"bryan":["Simio","Zzzz","Pelado fit","Pelado Sambo"]
     ,"sebas":["Furro","Literalmente un Furro"]
-    ,"jose":["Josex","Te va a caer con el FBI","Agente Secretp"]
+    ,"jose":["Josex","Te va a caer con el FBI","Agente Secreto"]
+    ,"ruti":["Ya olvidala socio","Se la comieron 3 manes"]
 }
 
 
@@ -55,6 +56,16 @@ client.on("message",msg => {
             let items = mensajes_personas[command]
             let item = items[Math.floor(Math.random()*items.length)];
             msg.channel.send(item)
+            break
+        }
+        case 'ruti':{
+            let items = mensajes_personas[command]
+            let item = items[Math.floor(Math.random()*items.length)];
+            msg.channel.send(item)
+            break
+        }
+        case 'pene':{
+            msg.channel.send('Le encanta a <@' + msg.author.id + ">")
             break
         }
         case 'rule34':{
